@@ -1,0 +1,25 @@
+{
+  "name": "device-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "mock": "node public/mock-server.js"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "echarts": "^5.4.3",
+    "socket.io-client": "^4.7.2",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@types/echarts": "^4.9.22",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.22",
+    "socket.io": "^4.7.2"
+  }
+}
