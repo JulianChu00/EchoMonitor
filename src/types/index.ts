@@ -2,8 +2,8 @@
 export interface DeviceData {
   deviceId: string
   timestamp: number
-  temperature: number    // 温度（℃）
-  load: number          // 负载（0-100%）
+  temperature: number
+  load: number
   status: 'normal' | 'warning' | 'error'
 }
 

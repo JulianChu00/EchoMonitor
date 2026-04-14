@@ -64,8 +64,7 @@ onMounted(initChart)
   width: 100%;
   height: 100%;
   min-height: 300px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 1;
+  padding: 16px;
 }
 </style>
