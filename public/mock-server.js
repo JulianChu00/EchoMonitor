@@ -1,11 +1,19 @@
 // 启动命令：npm run mock
+import 'dotenv/config'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 
 const PORT = process.env.PORT || 10000
 const httpServer = createServer()
+// --- CORS 动态配置 ---
 const io = new Server(httpServer, {
-  cors: { origin: '*', methods: ['GET', 'POST'] }
+  cors: {
+    // 如果是生产环境，只允许你的前端域名；否则允许所有（本地开发）
+    origin: process.env.NODE_ENV === 'production'
+      ? "https://echo-monitor-fawn.vercel.app/"
+      : "*",
+    methods: ['GET', 'POST']
+  }
 })
 
 // 模拟设备数据生成
