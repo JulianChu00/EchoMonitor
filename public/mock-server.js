@@ -2,6 +2,7 @@
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 
+const PORT = process.env.PORT || 10000
 const httpServer = createServer()
 const io = new Server(httpServer, {
   cors: { origin: '*', methods: ['GET', 'POST'] }
@@ -50,7 +51,6 @@ io.on('connection', (socket) => {
   })
 })
 
-const PORT = 3001
 httpServer.listen(PORT, () => {
   console.log(`🚀 Mock server running at http://localhost:${PORT}`)
 })

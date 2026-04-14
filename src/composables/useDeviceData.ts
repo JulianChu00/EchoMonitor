@@ -2,6 +2,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import type { DeviceData } from '@/types'
 import socket from '@/utils/socket'
 
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001'
+
 export function useDeviceData() {
   const latestData = ref<DeviceData | null>(null)
   const history = ref<DeviceData[]>([])
@@ -16,7 +18,7 @@ export function useDeviceData() {
   }
 
   onMounted(() => {
-    socket.connect('http://localhost:3001', {
+    socket.connect(SOCKET_URL, {
       onData,
       onError: (err) => console.error('数据订阅失败', err)
     })
